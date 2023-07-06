@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Videojuego Ficticio</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.7/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link rel="manifest" href="./mainfest.json" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Corben&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      html,
+      body {
+        height: 100%;
+        background-image: url("./imgs/ejemplo.gif");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        opacity: 0.9; /* Ajusta el valor de opacidad según tus necesidades */
+      }
+
+      .navbar {
+        position: sticky;
+        top: 0;
+        z-index: 999;
+      }
+      h1 {
+        font-family: "Press Start 2P", cursive;
+        background-image: linear-gradient(to right, #6546ef, #6de00f);
+        -webkit-background-clip: text; /* Para navegadores WebKit (Chrome, Safari) */
+        -webkit-text-fill-color: transparent; /* Para navegadores WebKit (Chrome, Safari) */
+      }
+
+      p {
+        font-family: "Corben", cursive;
+      }
+      .page-loader {
+        opacity: 1;
+        animation: fade-out 10s ease-out forwards;
+        background-image: url("./imgs/ejemplo.gif");
+      }
+
+      @keyframes fade-out {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 0.9;
+        }
+      }
+
+      button {
+        margin-top: 10px;
+      }
+
+      #toggleButton {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 9999;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: #fff;
+        border: none;
+        cursor: pointer;
+      }
+
+      .volume-on:before,
+      .volume-off:before {
+        content: "";
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+
+      .volume-on:before {
+        background-image: url("./icons/on.svg");
+      }
+
+      .volume-off:before {
+        background-image: url("./icons/off.svg");
+      }
+
+      .volume-off {
+        display: none;
+      }
+
+      .card-section {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+      }
+
+      .card {
+        width: 300px;
+        color: #fff;
+        background-color: #000000;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+      }
+
+      .card-image img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+
+      .card-content {
+        padding: 20px;
+      }
+
+      .card h3 {
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+
+      .card p {
+        font-size: 14px;
+      }
+
+      @media screen and (max-width: 768px) {
+        .card-section {
+          justify-content: flex-start;
+        }
+
+        .card {
+          width: calc(50% - 10px);
+        }
+      }
+
+      @media screen and (max-width: 480px) {
+        .card {
+          width: 100%;
+        }
+      }
+    </style>
+    <script src="https://cdn.tailwindcss.com/2.2.7/tailwind.min.js"></script>
+  </head>
+
+  <body class="bg-black page-loader">
+    <audio id="audio" src="./sounds/main.mp3" autoplay loop></audio>
+
+    <div class="min-h-screen flex flex-col justify-between">
+      <nav class="navbar py-4 bg-indigo-600 text-white flex justify-center ">
+        <a href="#historia" class="mr-4 hover:text-green-500">Historia</a>
+        <a href="#personajes" class="mr-4 hover:text-green-500">Personajes</a>
+        <a href="#mundo" class="mr-4 hover:text-green-500">Mundo</a>        
+        <a href="#niveles" class="mr-4 hover:text-green-500">Niveles</a>
+      </nav>
+      <button id="toggleButton">
+        <span id="volumeIcon" class="volume-on"></span>
+        <span id="muteIcon" class="volume-off"></span>
+      </button>
+      <header class="py-4 bg-gray-900 text-white text-center text-pink-500">
+        <h1 class="text-8xl">El legado de los guardianes</h1>
+      </header>
+
+      <section
+        id="historia"
+        class="flex flex-col items-center justify-center flex-grow transition duration-500 ease bg-gray-800 hover:bg-gray-900"
+      >
+        <h2 class="text-5xl text-pink-500 mb-4">Historia</h2>
+        <p class="text-2xl text-white mb-8 text-center">
+          En un mundo mágico llamado Eldoria, los Guardianes, seres poderosos
+          que protegen el equilibrio entre la luz y la oscuridad, han
+          desaparecido misteriosamente. Sin los Guardianes, la oscuridad amenaza
+          con consumir el mundo y sumirlo en el caos. El jugador asume el papel
+          de Maya, una joven aprendiz de maga, cuyo destino se entrelaza con el
+          legado de los Guardianes.
+          <br />
+          Maya descubre un antiguo pergamino que revela la existencia de los
+          Guardianes y la necesidad de encontrarlos para salvar Eldoria. Con
+          valentía, emprende un viaje peligroso para localizar a los antiguos
+          Guardianes y restaurar el equilibrio perdido. A lo largo de su
+          aventura, Maya se enfrentará a criaturas oscuras y resolverá enigmas
+          mientras descubre la verdad detrás de la desaparición de los
+          Guardianes.
+        </p>
+      </section>
+
+      <section
+        id="personajes"
+        class="flex flex-col items-center justify-center flex-grow transition duration-500 ease bg-gray-800 hover:bg-gray-900"
+      >
+        <h2 class="text-5xl text-pink-500 mb-4">Personajes</h2>
+
+        <div class="card-section">
+          <div class="card">
+            <div class="card-image">
+              <img
+                src="https://e7.pngegg.com/pngimages/611/449/png-clipart-magician-burtininkas-final-fantasy-black-feather-video-game-cartoon.png"
+                alt="Personaje 1"
+              />
+            </div>
+            <div class="card-content">
+              <h3>MAYA</h3>
+              <p>
+                La protagonista del juego, una joven aprendiz de maga con un
+                espíritu valiente y determinación para salvar a Eldoria.
+              </p>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-image">
+              <img
+                src="https://e7.pngegg.com/pngimages/611/449/png-clipart-magician-burtininkas-final-fantasy-black-feather-video-game-cartoon.png"
+                alt="Personaje 2"
+              />
+            </div>
+            <div class="card-content">
+              <h3>MENTOR</h3>
+              <p>
+                Un antiguo mago que guía a Maya en su viaje y le enseña nuevos
+                hechizos.
+              </p>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-image">
+              <img
+                src="https://e7.pngegg.com/pngimages/611/449/png-clipart-magician-burtininkas-final-fantasy-black-feather-video-game-cartoon.png"
+                alt="Personaje 2"
+              />
+            </div>
+            <div class="card-content">
+              <h3>ENEMIGOS OSCUROS</h3>
+              <p>
+                Criaturas sombrías y jefes malvados que buscan sumir a Eldoria
+                en la oscuridad.
+              </p>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-image">
+              <img
+                src="https://e7.pngegg.com/pngimages/611/449/png-clipart-magician-burtininkas-final-fantasy-black-feather-video-game-cartoon.png"
+                alt="Personaje 2"
+              />
+            </div>
+            <div class="card-content">
+              <h3>CRIATURAS MÁGICAS</h3>
+              <p>
+                A lo largo del juego, Maya se encontrará con seres mágicos
+                amigables que le ayudarán o le darán consejos.
+              </p>
+            </div>
+          </div>
+
+          <!-- Agrega más cartas según necesites -->
+        </div>
+      </section>
+
+      <section
+        id="mundo"
+        class="flex flex-col items-center justify-center flex-grow transition duration-500 ease bg-gray-800 hover:bg-gray-900"
+      >
+        <h2 class="text-5xl text-pink-500 mb-4">Mundo del juego</h2>
+        <p class="text-2xl text-white mb-8 text-center">
+          Eldoria es un mundo mágico y vibrante, lleno de bosques encantados,
+          ruinas antiguas, ciudades flotantes y templos sagrados. Cada área del
+          juego está llena de secretos, tesoros y personajes intrigantes. A
+          medida que Maya avanza, descubre diferentes reinos, cada uno con su
+          propio estilo visual y desafíos únicos.
+        </p>
+      </section>
+
+      <section
+        id="niveles"
+        class="flex flex-col items-center justify-center flex-grow transition duration-500 ease bg-gray-800 hover:bg-gray-900"
+      >
+        <h2 class="text-5xl text-pink-500 mb-4">Niveles</h2>
+
+        <div class="card-section">
+          <div class="card">
+            <div class="card-image">
+              <img
+                src="https://e7.pngegg.com/pngimages/611/449/png-clipart-magician-burtininkas-final-fantasy-black-feather-video-game-cartoon.png"
+                alt="Personaje 1"
+              />
+            </div>
+            <div class="card-content">
+              <h3>BOSQUE DE LOS SUSURROS</h3>
+              <p>
+                Un bosque encantado lleno de criaturas mágicas y secretos
+                antiguos.
+              </p>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-image">
+              <img
+                src="https://e7.pngegg.com/pngimages/611/449/png-clipart-magician-burtininkas-final-fantasy-black-feather-video-game-cartoon.png"
+                alt="Personaje 2"
+              />
+            </div>
+            <div class="card-content">
+              <h3>CIUDAD FLOTANTE DE REACH</h3>
+              <p>
+                Una ciudad suspendida en el cielo, habitada por seres voladores
+                y tecnología avanzada.
+              </p>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-image">
+              <img
+                src="https://e7.pngegg.com/pngimages/611/449/png-clipart-magician-burtininkas-final-fantasy-black-feather-video-game-cartoon.png"
+                alt="Personaje 2"
+              />
+            </div>
+            <div class="card-content">
+              <h3>REINO SUBTERRÁNEO DE LAS SOMBRAS</h3>
+              <p>
+                Un mundo subterráneo lleno de peligrosas criaturas de la
+                oscuridad.
+              </p>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-image">
+              <img
+                src="https://e7.pngegg.com/pngimages/611/449/png-clipart-magician-burtininkas-final-fantasy-black-feather-video-game-cartoon.png"
+                alt="Personaje 2"
+              />
+            </div>
+            <div class="card-content">
+              <h3>TEMPLO DEL EQUILIBRIO</h3>
+              <p>
+                Un antiguo templo donde los Guardianes solían meditar y mantener
+                el equilibrio entre la luz y la oscuridad.
+              </p>
+            </div>
+          </div>
+
+          <!-- Agrega más cartas según necesites -->
+        </div>
+      </section>
+
+      <footer class="py-4 bg-gray-900 text-white text-center">
+        &copy; 2023 Nombre del Videojuego Ficticio. Todos los derechos
+        reservados.
+      </footer>
+    </div>
+  </body>
+  <script>
+    var audio = document.getElementById("audio");
+    var toggleButton = document.getElementById("toggleButton");
+    var volumeIcon = document.getElementById("volumeIcon");
+    var muteIcon = document.getElementById("muteIcon");
+
+    toggleButton.addEventListener("click", function () {
+      if (audio.paused) {
+        audio.play();
+        volumeIcon.style.display = "inline-block";
+        muteIcon.style.display = "none";
+      } else {
+        audio.pause();
+        volumeIcon.style.display = "none";
+        muteIcon.style.display = "inline-block";
+      }
+    });
+  </script>
+</html>
