@@ -22,137 +22,7 @@
       rel="stylesheet"
     />
 
-    <style>
-      html,
-      body {
-        height: 100%;
-        background-image: url("./imgs/ejemplo.gif");
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        opacity: 0.9; /* Ajusta el valor de opacidad según tus necesidades */
-      }
-
-      .navbar {
-        position: sticky;
-        top: 0;
-        z-index: 999;
-      }
-      h1 {
-        font-family: "Press Start 2P", cursive;
-        background-image: linear-gradient(to right, #6546ef, #6de00f);
-        -webkit-background-clip: text; /* Para navegadores WebKit (Chrome, Safari) */
-        -webkit-text-fill-color: transparent; /* Para navegadores WebKit (Chrome, Safari) */
-      }
-
-      p {
-        font-family: "Corben", cursive;
-      }
-      .page-loader {
-        opacity: 1;
-        animation: fade-out 10s ease-out forwards;
-        background-image: url("./imgs/ejemplo.gif");
-      }
-
-      @keyframes fade-out {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 0.9;
-        }
-      }
-
-      button {
-        margin-top: 10px;
-      }
-
-      #toggleButton {
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        z-index: 9999;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        background-color: #fff;
-        border: none;
-        cursor: pointer;
-      }
-
-      .volume-on:before,
-      .volume-off:before {
-        content: "";
-        display: inline-block;
-        width: 24px;
-        height: 24px;
-        background-repeat: no-repeat;
-        background-position: center;
-      }
-
-      .volume-on:before {
-        background-image: url("./icons/on.svg");
-      }
-
-      .volume-off:before {
-        background-image: url("./icons/off.svg");
-      }
-
-      .volume-off {
-        display: none;
-      }
-
-      .card-section {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 20px;
-      }
-
-      .card {
-        width: 300px;
-        color: #fff;
-        background-color: #000000;
-        border-radius: 8px;
-        overflow: hidden;
-        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-      }
-
-      .card-image img {
-        width: 100%;
-        height: 200px;
-        object-fit: cover;
-      }
-
-      .card-content {
-        padding: 20px;
-      }
-
-      .card h3 {
-        font-size: 20px;
-        margin-bottom: 10px;
-      }
-
-      .card p {
-        font-size: 14px;
-      }
-
-      @media screen and (max-width: 768px) {
-        .card-section {
-          justify-content: flex-start;
-        }
-
-        .card {
-          width: calc(50% - 10px);
-        }
-      }
-
-      @media screen and (max-width: 480px) {
-        .card {
-          width: 100%;
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="./styles.css">
     <script src="https://cdn.tailwindcss.com/2.2.7/tailwind.min.js"></script>
   </head>
 
@@ -362,27 +232,10 @@
       </section>
 
       <footer class="py-4 bg-gray-900 text-white text-center">
-        &copy; 2023 Nombre del Videojuego Ficticio. Todos los derechos
+        &copy; 2023 El legado de los guardianes
         reservados.
       </footer>
     </div>
   </body>
-  <script>
-    var audio = document.getElementById("audio");
-    var toggleButton = document.getElementById("toggleButton");
-    var volumeIcon = document.getElementById("volumeIcon");
-    var muteIcon = document.getElementById("muteIcon");
-
-    toggleButton.addEventListener("click", function () {
-      if (audio.paused) {
-        audio.play();
-        volumeIcon.style.display = "inline-block";
-        muteIcon.style.display = "none";
-      } else {
-        audio.pause();
-        volumeIcon.style.display = "none";
-        muteIcon.style.display = "inline-block";
-      }
-    });
-  </script>
+  <script src="./main.js"></script>
 </html>
