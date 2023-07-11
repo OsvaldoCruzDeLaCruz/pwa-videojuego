@@ -1,6 +1,6 @@
 {
-    "name": "Videojuego",
-    "short_name": "PWA",
+    "name": "El legado de los guardianes",
+    "short_name": "Legado",
     "theme_color": "ffe08a",
     "background_color": "ffe08a",
     "display": "standalone",
