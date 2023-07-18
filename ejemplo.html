@@ -1,62 +1,130 @@
-<script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
-<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+<!DOCTYPE html>
+<html lang="es">
 
-<style>
-  .arjs-loader {
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.8);
-    z-index: 9999;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Infografía Responsiva con Estilos Modernos</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.7/dist/tailwind.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+    rel="stylesheet"
+  />
 
-  .arjs-loader div {
-    text-align: center;
-    font-size: 1.25em;
-    color: white;
-  }
-</style>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Corben&display=swap"
+    rel="stylesheet"
+  />
 
-<body style="margin : 0px; overflow: hidden;">
-  <!-- minimal loader shown until image descriptors are loaded -->
-  <div class="arjs-loader">
-    <div>Loading, please wait...</div>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-image: linear-gradient(to right, rgb(193, 220, 148), rgb(252, 212, 254));
+      color: #333;
+
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px;
+      color: black;
+
+      
+    }
+
+ 
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #ff0066;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.25rem;
+      line-height: 1.5;
+      color: #666;
+    }
+
+    .infographic {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+      margin-top: 40px;
+    }
+
+    .infographic-item {
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .infographic-item:hover {
+      transform: translateY(-10px);
+    }
+
+    .infographic-item img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    h1 {
+  font-family: "Press Start 2P", cursive;
+  background-image: linear-gradient(to right, #6546ef, #6de00f);
+  -webkit-background-clip: text; /* Para navegadores WebKit (Chrome, Safari) */
+  -webkit-text-fill-color: transparent; /* Para navegadores WebKit (Chrome, Safari) */
+  
+}
+
+
+  </style>
+</head>
+
+<body>
+  <div class="container page-loader">
+    <h1 data-aos="fade-down" data-aos-duration="1000" class="text-3xl">El legado de los guardianes</h1>
+    <p data-aos="fade-up" data-aos-duration="1000">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sit
+      amet placerat ligula. Sed sollicitudin tincidunt leo ut aliquam. Proin at sagittis erat. Fusce mattis velit at
+      consectetur molestie. In hac habitasse platea dictumst.</p>
+
+    <div class="infographic">
+      <div class="infographic-item" data-aos="fade-right" data-aos-duration="1000">
+        <img src="https://via.placeholder.com/400" alt="Infografía 1">
+        <h2 class="text-lg font-semibold mt-4">Infografía 1</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+      <div class="infographic-item" data-aos="fade-left" data-aos-duration="1000">
+        <img src="https://via.placeholder.com/400" alt="Infografía 2">
+        <h2 class="text-lg font-semibold mt-4">Infografía 2</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+      <div class="infographic-item" data-aos="fade-right" data-aos-duration="1000">
+        <img src="https://via.placeholder.com/400" alt="Infografía 3">
+        <h2 class="text-lg font-semibold mt-4">Infografía 3</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+      <div class="infographic-item" data-aos="fade-left" data-aos-duration="1000">
+        <img src="https://via.placeholder.com/400" alt="Infografía 4">
+        <h2 class="text-lg font-semibold mt-4">Infografía 4</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+    </div>
   </div>
-  <a-scene
-    vr-mode-ui="enabled: false;"
-    renderer="logarithmicDepthBuffer: true;"
-    embedded
-    arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;"
-  >
-    <!-- we use cors proxy to avoid cross-origin problems -->
 
-    <!--
-      ⚠️⚠️⚠️
-      https://arjs-cors-proxy.herokuapp.com/ is now offline, Heroku has dismissed all his free plans from November 2022.
-      You need to host your own proxy and use it instead. The proxy is based on CORS Anywhere (see https://github.com/Rob--W/cors-anywhere).
-      ⚠️⚠️⚠️
-    -->
-
-    <a-nft
-      type="nft"
-      url="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/trex-image/trex"
-      smooth="true"
-      smoothCount="10"
-      smoothTolerance=".01"
-      smoothThreshold="5"
-    >
-      <a-entity
-        gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/scene.gltf"
-        scale="5 5 5"
-        position="50 150 0"
-      >
-      </a-entity>
-    </a-nft>
-    <a-entity camera></a-entity>
-  </a-scene>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 </body>
+
+</html>

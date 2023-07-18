@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="icon" href="imgs/cuchillo.png" type="image/x-icon">
+    <link rel="icon" href="imgs/cuchillo.png" type="image/x-icon" />
     <meta charset="UTF-8" />
     <title>El legado de los guardianes</title>
     <link
@@ -10,17 +10,18 @@
     />
     <link rel="manifest" href="./mainfest.json" />
     <script>
- if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/service-worker.js')
-      .then(registration => {
-        console.log('Service Worker registrado con éxito:', registration);
-      })
-      .catch(error => {
-        console.log('Error al registrar el Service Worker:', error);
-      });
-  });
-}
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker
+            .register("/sw.js")
+            .then((registration) => {
+              console.log("Service Worker registrado con éxito:", registration);
+            })
+            .catch((error) => {
+              console.log("Error al registrar el Service Worker:", error);
+            });
+        });
+      }
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -36,7 +37,10 @@
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="./styles.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <link rel="stylesheet" href="./styles.css" />
     <script src="https://cdn.tailwindcss.com/2.2.7/tailwind.min.js"></script>
   </head>
 
@@ -44,11 +48,12 @@
     <audio id="audio" src="./sounds/main.mp3" autoplay loop></audio>
 
     <div class="min-h-screen flex flex-col justify-between">
-      <nav class="navbar py-4 bg-indigo-600 text-white flex justify-center ">
+      <nav class="navbar py-4 bg-indigo-600 text-white flex justify-center">
         <a href="#historia" class="mr-4 hover:text-green-500">Historia</a>
         <a href="#personajes" class="mr-4 hover:text-green-500">Personajes</a>
-        <a href="#mundo" class="mr-4 hover:text-green-500">Mundo</a>        
+        <a href="#mundo" class="mr-4 hover:text-green-500">Mundo</a>
         <a href="#niveles" class="mr-4 hover:text-green-500">Niveles</a>
+        <a href="#equipo" class="mr-4 hover:text-green-500">Equipo</a>
       </nav>
       <button id="toggleButton">
         <span id="volumeIcon" class="volume-on"></span>
@@ -68,14 +73,14 @@
           que protegen el equilibrio entre la luz y la oscuridad, han
           desaparecido misteriosamente. Sin los Guardianes, la oscuridad amenaza
           con consumir el mundo y sumirlo en el caos. El jugador asume el papel
-          de Maya, una joven aprendiz de maga, cuyo destino se entrelaza con el
+          de Erick, un joven aprendiz de mago, cuyo destino se entrelaza con el
           legado de los Guardianes.
           <br />
-          Maya descubre un antiguo pergamino que revela la existencia de los
+          Erick descubre un antiguo pergamino que revela la existencia de los
           Guardianes y la necesidad de encontrarlos para salvar Eldoria. Con
           valentía, emprende un viaje peligroso para localizar a los antiguos
           Guardianes y restaurar el equilibrio perdido. A lo largo de su
-          aventura, Maya se enfrentará a criaturas oscuras y resolverá enigmas
+          aventura, Erick se enfrentará a criaturas oscuras y resolverá enigmas
           mientras descubre la verdad detrás de la desaparición de los
           Guardianes.
         </p>
@@ -90,31 +95,25 @@
         <div class="card-section">
           <div class="card">
             <div class="card-image">
-              <img
-                src="https://e7.pngegg.com/pngimages/611/449/png-clipart-magician-burtininkas-final-fantasy-black-feather-video-game-cartoon.png"
-                alt="Personaje 1"
-              />
+              <img src="/imgs/erick.png" alt="Personaje 1" />
             </div>
             <div class="card-content">
-              <h3>MAYA</h3>
+              <h3>Erick</h3>
               <p>
-                La protagonista del juego, una joven aprendiz de maga con un
-                espíritu valiente y determinación para salvar a Eldoria.
+                El protagonista del juego, un joven aprendiz con un espíritu
+                valiente y determinación para salvar a Eldoria.
               </p>
             </div>
           </div>
 
           <div class="card">
             <div class="card-image">
-              <img
-                src="https://e7.pngegg.com/pngimages/611/449/png-clipart-magician-burtininkas-final-fantasy-black-feather-video-game-cartoon.png"
-                alt="Personaje 2"
-              />
+              <img src="./imgs/mentor.png" alt="Personaje 2" />
             </div>
             <div class="card-content">
-              <h3>MENTOR</h3>
+              <h3>Mago</h3>
               <p>
-                Un antiguo mago que guía a Maya en su viaje y le enseña nuevos
+                Un antiguo mago que guía a Erick en su viaje y le enseña nuevos
                 hechizos.
               </p>
             </div>
@@ -122,10 +121,7 @@
 
           <div class="card">
             <div class="card-image">
-              <img
-                src="https://e7.pngegg.com/pngimages/611/449/png-clipart-magician-burtininkas-final-fantasy-black-feather-video-game-cartoon.png"
-                alt="Personaje 2"
-              />
+              <img src="./imgs/bat.png" alt="Personaje 2" />
             </div>
             <div class="card-content">
               <h3>ENEMIGOS OSCUROS</h3>
@@ -136,22 +132,7 @@
             </div>
           </div>
 
-          <div class="card">
-            <div class="card-image">
-              <img
-                src="https://e7.pngegg.com/pngimages/611/449/png-clipart-magician-burtininkas-final-fantasy-black-feather-video-game-cartoon.png"
-                alt="Personaje 2"
-              />
-            </div>
-            <div class="card-content">
-              <h3>CRIATURAS MÁGICAS</h3>
-              <p>
-                A lo largo del juego, Maya se encontrará con seres mágicos
-                amigables que le ayudarán o le darán consejos.
-              </p>
-            </div>
-          </div>
-
+  
           <!-- Agrega más cartas según necesites -->
         </div>
       </section>
@@ -165,7 +146,7 @@
           Eldoria es un mundo mágico y vibrante, lleno de bosques encantados,
           ruinas antiguas, ciudades flotantes y templos sagrados. Cada área del
           juego está llena de secretos, tesoros y personajes intrigantes. A
-          medida que Maya avanza, descubre diferentes reinos, cada uno con su
+          medida que Erick avanza, descubre diferentes reinos, cada uno con su
           propio estilo visual y desafíos únicos.
         </p>
       </section>
@@ -180,7 +161,7 @@
           <div class="card">
             <div class="card-image">
               <img
-                src="https://e7.pngegg.com/pngimages/611/449/png-clipart-magician-burtininkas-final-fantasy-black-feather-video-game-cartoon.png"
+                src="./imgs/fondo.png"
                 alt="Personaje 1"
               />
             </div>
@@ -193,63 +174,188 @@
             </div>
           </div>
 
-          <div class="card">
-            <div class="card-image">
-              <img
-                src="https://e7.pngegg.com/pngimages/611/449/png-clipart-magician-burtininkas-final-fantasy-black-feather-video-game-cartoon.png"
-                alt="Personaje 2"
-              />
-            </div>
-            <div class="card-content">
-              <h3>CIUDAD FLOTANTE DE REACH</h3>
-              <p>
-                Una ciudad suspendida en el cielo, habitada por seres voladores
-                y tecnología avanzada.
-              </p>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="card-image">
-              <img
-                src="https://e7.pngegg.com/pngimages/611/449/png-clipart-magician-burtininkas-final-fantasy-black-feather-video-game-cartoon.png"
-                alt="Personaje 2"
-              />
-            </div>
-            <div class="card-content">
-              <h3>REINO SUBTERRÁNEO DE LAS SOMBRAS</h3>
-              <p>
-                Un mundo subterráneo lleno de peligrosas criaturas de la
-                oscuridad.
-              </p>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="card-image">
-              <img
-                src="https://e7.pngegg.com/pngimages/611/449/png-clipart-magician-burtininkas-final-fantasy-black-feather-video-game-cartoon.png"
-                alt="Personaje 2"
-              />
-            </div>
-            <div class="card-content">
-              <h3>TEMPLO DEL EQUILIBRIO</h3>
-              <p>
-                Un antiguo templo donde los Guardianes solían meditar y mantener
-                el equilibrio entre la luz y la oscuridad.
-              </p>
-            </div>
-          </div>
-
           <!-- Agrega más cartas según necesites -->
         </div>
       </section>
 
+      <section
+        id="equipo"
+        class="flex flex-col items-center justify-center flex-grow transition duration-500 ease bg-gray-800 hover:bg-gray-900"
+      >
+        <h2 class="text-5xl text-pink-500 mb-4">Equipo</h2>
+
+        <h3 class="text-3xl text-purple-500 mb-4">Los salamanca</h3>
+        <p class="text-xl text-pink-500 mb-4">
+          Somos Los salamanca. Un equipo conformado por cinco integrantes que nos emociona la tecnología.
+        </p>
+        <div class="flex flex-wrap">
+          <!-- Member #1 -->
+          <div class="w-full md:w-6/12 lg:w-3/12 mb-6 px-6 sm:px-6 lg:px-4">
+            <div class="flex flex-col">
+              <!-- Avatar -->
+              <a class="mx-auto">
+                <img
+                  class="rounded-2xl drop-shadow-md hover:drop-shadow-xl transition-all duration-200 delay-100"
+                  src="./imgs/osvaldo.jpg"
+                />
+              </a>
+
+              <!-- Details -->
+              <div class="text-center mt-6">
+                <!-- Name -->
+                <h1 class="text-gray-900 text-xl font-bold mb-1">
+                  Osvaldo Cruz De La Cruz
+                </h1>
+
+                <!-- Title -->
+                <div class="text-gray-700 font-light mb-2">
+                  <p class="text-white">
+                    Lider de equipo
+                  </p>
+                </div>
+
+             
+              </div>
+            </div>
+          </div>
+
+          <!-- Member #2 -->
+          <div class="w-full md:w-6/12 lg:w-3/12 mb-6 px-6 sm:px-6 lg:px-4">
+            <div class="flex flex-col">
+              <!-- Avatar -->
+              <a class="mx-auto">
+                <img
+                  class="rounded-2xl drop-shadow-md hover:drop-shadow-xl transition-all duration-200 delay-100"
+                  src="./imgs/Octavio.jpeg"
+                />
+              </a>
+
+              <!-- Details -->
+              <div class="text-center mt-6">
+                <!-- Name -->
+                <h1 class="text-gray-900 text-xl font-bold mb-1">
+                  Octavio Mancilla Cordero
+                </h1>
+
+                <!-- Title -->
+                <div class="text-gray-700 font-light mb-2">
+                  <p class="text-white">
+                    Programador
+                  </p>
+                </div>
+
+               
+              </div>
+            </div>
+          </div>
+
+          <!-- Member #3 -->
+          <div class="w-full md:w-6/12 lg:w-3/12 mb-6 px-6 sm:px-6 lg:px-4">
+            <div class="flex flex-col">
+              <!-- Avatar -->
+              <a class="mx-auto">
+                <img
+                  class="rounded-2xl drop-shadow-md hover:drop-shadow-xl transition-all duration-200 delay-100"
+                  src="./imgs/jorge.jpeg"
+                />
+              </a>
+
+              <!-- Details -->
+              <div class="text-center mt-6">
+                <!-- Name -->
+                <h1 class="text-gray-900 text-xl font-bold mb-1">
+                  Jorge Enrique Rodríguez Zambrano
+                </h1>
+
+                <!-- Title -->
+                <div class="text-gray-700 font-light mb-2">
+
+                  <p class="text-white">
+                    Tired & M. Specialist
+                  </p>
+                </div>
+
+                
+              </div>
+            </div>
+          </div>
+
+          <!-- Member #5 -->
+          <div class="w-full md:w-6/12 lg:w-3/12 mb-6 px-6 sm:px-6 lg:px-4">
+            <div class="flex flex-col">
+              <!-- Avatar -->
+              <a class="mx-auto">
+                <img
+                  class="rounded-2xl drop-shadow-md hover:drop-shadow-xl transition-all duration-200 delay-100"
+                  src="./imgs/Yolanda.jpeg"
+                />
+              </a>
+
+              <!-- Details -->
+              <div class="text-center mt-6">
+                <!-- Name -->
+                <h1 class="text-gray-900 text-xl font-bold mb-1">
+                  Yolanda del Carmen Jiménez Jacobo
+                </h1>
+
+                <!-- Title -->
+                <div class="text-gray-700 font-light mb-2">
+
+                  <p class="text-white">
+                    Tired & M. Specialist
+                  </p>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+           <!-- Member #5 -->
+           <div class="w-full md:w-6/12 lg:w-3/12 mb-6 px-6 sm:px-6 lg:px-4">
+            <div class="flex flex-col">
+              <!-- Avatar -->
+              <a class="mx-auto">
+                <img
+                  class="rounded-2xl drop-shadow-md hover:drop-shadow-xl transition-all duration-200 delay-100"
+                  src="./imgs/marco.jpeg"
+                />
+              </a>
+
+              <!-- Details -->
+              <div class="text-center mt-6">
+                <!-- Name -->
+                <h1 class="text-gray-900 text-xl font-bold mb-1">
+                  Marco Antonio Morales Ríos 
+                </h1>
+
+                <!-- Title -->
+                <div class="text-gray-700 font-light mb-2">
+                  <p class="text-white">
+                    Tired & M. Specialist
+                  </p>
+                
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
       <footer class="py-4 bg-gray-900 text-white text-center">
-        &copy; 2023 El legado de los guardianes
-        reservados.
+        &copy; 2023 El legado de los guardianes reservados.
       </footer>
     </div>
+
+
+    <div class="container">
+      <a href="#" class="floating-button" id="download-button">
+        <i class="fa fa-download"></i>
+      </a>
+    </div>
+    
+
   </body>
   <script src="./main.js"></script>
 </html>
