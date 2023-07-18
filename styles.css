@@ -5,12 +5,12 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  opacity: 0.9; /* Ajusta el valor de opacidad según tus necesidades */
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
   margin: 0;
   padding: 0;
+  opacity: 0.9; /* Ajusta el valor de opacidad según tus necesidades */
 }
 
 .navbar {
